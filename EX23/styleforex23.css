@@ -1,0 +1,22 @@
+head {
+    background-image: url("Marble.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.centered-image {
+    width: 400px;
+}
+
+.column {
+    float: left;
+    width: 20%;
+}
