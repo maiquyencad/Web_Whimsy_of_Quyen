@@ -1,0 +1,38 @@
+table {
+    width: 600px;
+    margin: 0 auto;
+    border-spacing: 0;
+    border: 1px solid #98bf21;
+    border-collapse: collapse;
+    padding: 3px 7px 2px 7px;
+}
+
+/* header */
+.header {
+    background-color: #A7C942 !important;
+}
+
+h4 {
+    color: white;
+    font-size: 1.1em;
+    font-family: Arial;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* row */
+td {
+    font-size: 1em;
+    font-family: Arial;
+    text-align: left;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+tbody tr:nth-child(2n+1) {
+    background-color: #e6f3bf;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: white;
+}
