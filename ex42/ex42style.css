@@ -1,0 +1,124 @@
+body {
+    background-color: whitesmoke !important;
+    max-width: 800px;
+}
+
+/* header */
+.center {
+    text-align: center;
+    position: sticky;
+}
+
+table {
+    border-collapse: separate !important;
+    border-spacing: 10px;
+    margin: 0 auto;
+    margin-bottom: 0px !important;
+    text-align: center;
+}
+
+td a {
+    color: blue;
+}
+
+td a:hover {
+    background-color: lightyellow;
+    cursor: pointer
+}
+
+hr {
+    margin-top: 0;
+}
+
+
+
+/* main */
+li {
+    width: 95%;
+    text-align: justify;
+}
+
+ul {
+    list-style: circle url("./images/Apple.jpg") outside
+}
+
+.red-text {
+    font-weight: bold;
+    color: red;
+}
+
+p {
+    color: rgb(5, 201, 5);
+    text-align: justify;
+}
+
+.left-margin {
+    text-align: justify;
+    color: rgb(5, 201, 5) !important;
+    background-color: lightgrey !important;
+    max-width: 80%;
+    margin-left: 1cm;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #958660;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.table2 {
+    border-collapse: separate !important;
+    border-spacing: 0px;
+    padding: 0;
+    margin: 0;
+    text-align: justify;
+}
+
+.border-fix {
+    border: none;
+}
+
+.border-fix2 {
+    vertical-align: top;
+    background-color: #FBDDA3;
+    width: 310px;
+    border: 2px solid rgb(5, 201, 5);
+}
+
+.left-para {
+    text-align: left !important;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 0;
+
+}
+
+.text-with-image {
+    margin: 10px;
+    display: inline-flex;
+}
+
+.text-with-image p {
+    text-align: left;
+    margin-right: 10px;
+}
+
+.text-adjustment p {
+    text-align: left;
+    margin: 10px;
+}
+
+.green-text {
+    font-weight: bold;
+    color: rgb(5, 201, 5);
+}
+
+.italic {
+    color: rgb(5, 201, 5);
+    padding: 0;
+    font-style: italic;
+}
