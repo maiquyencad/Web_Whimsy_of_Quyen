@@ -1,0 +1,30 @@
+table {
+    margin: 0 auto;
+    max-width: 90%;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+thead,
+tfoot {
+    background-color: blue;
+    color: white;
+}
+
+.center {
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: whitesmoke;
+}
+
+tbody tr:nth-child(even) {
+    background-color: pink;
+}
+
+tbody tr:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
