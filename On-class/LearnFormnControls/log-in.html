@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+</head>
+
+<body>
+    <form action="processlogin.html" method="post">
+        <table>
+            <tr>
+                <td colspan="2">Login System</td>
+            </tr>
+            <tr>
+                <td>User Name:</td>
+                <td>
+                    <input type="text" name="username" id="username" />
+                </td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>
+                    <input type="password" name="password" id="password" />
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="checkbox" name="saveinfor" id="saveinfor" />
+                    <label for="saveinfor"> Save Login information</label>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" name="login" id="login" value="login" />
+                    <input type="reset" name="reset" id="reset" value="Clear" />
+                    <input type="button" value="Say haha" onclick="javascript:alert('Hello haha')" />
+                    <input type="button" value="Visit Faculty of Information Systems"
+                        onclick="javascript:window.location.href='https://is.uel.edu.vn'">
+                </td>
+            </tr>
+            <!-- luu thong tin vao trinh duyet: bang cookies hoac local storage -->
+        </table>
+
+</body>
+
+</html>

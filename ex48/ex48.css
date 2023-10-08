@@ -1,0 +1,12 @@
+body {
+    margin: 0 auto;
+    max-width: 100%;
+    background-color: rgb(146, 215, 243);
+    text-align: center;
+    padding: 20px;
+}
+
+table {
+    margin: 0 auto;
+    text-align: left;
+}
