@@ -1,0 +1,28 @@
+body {
+    background-color: rgb(191, 255, 255);
+    max-width: 50%;
+    margin: 0 auto !important;
+    border: 2px solid blue;
+    margin: 0;
+    padding: 10px;
+}
+
+.adjust-width {
+    width: 85%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: red !important;
+}
+
+.button {
+    border: none;
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    opacity: 0.7;
+}

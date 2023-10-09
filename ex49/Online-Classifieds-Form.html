@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex49_K214110847</title>
+    <link rel="stylesheet" href="ex49.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Online Classifieds Search Form</h1>
+        <hr>
+    </header>
+    <main>
+        <form action="Resultpage.html">
+            <h4>1. Search for a classified in the following sections</h4>
+            <table>
+                <tr>
+                    <td>
+
+                        <input type="radio" name="type" value="Employment" check=“checked” /> Employment <br />
+                        <input type="radio" name="type" value="For Sale" checked=“checked” /> For Sale <br />
+                        <input type="radio" name="type" value="Housing" check=“checked” /> Housing
+
+                    </td>
+                    <td>
+                        <input type="radio" name="type" value="Personal" check=“checked” /> Personal <br />
+                        <input type="radio" name="type" value="Miscellancus" check=“checked” /> Miscellancus <br />
+                        <input type="radio" name="type" value="All of the above" check=“checked” /> All of the above
+        </form>
+        </td>
+        </tr>
+        </table>
+        <h4>2) Search the following publications:</h4>
+        <table>
+            <tr>
+                <td>
+                    <input type="checkbox" name="Midwest times" id="Midwest times" checked="checked">
+                    <label for="Midwest times">Midwest times</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="Modern News" id="Modern News">
+                    <label for="Modern News">Modern News</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="Employment Today" id="Employment Today">
+                    <label for="Employment Today">Employment Today</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="Great Lakes Classifieds" id="Great Lakes Classifieds"
+                        checked="checked">
+                    <label for="Great Lakes Classifieds">Great Lakes Classifieds</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="Middleton Daily" id="Middleton Daily">
+                    <label for="Middleton Daily">Middleton Daily</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="Cashtown Daily News" id="Cashtown Daily News">
+                    <label for="Cashtown Daily News">Cashtown Daily News</label>
+                </td>
+            </tr>
+        </table>
+        <h4>3) From to
+            <input id="from" placeholder="mm/ydd/yy" type="date" name="from" value="" /> to
+            <input id="to" placeholder="mm/ydd/yy" type="date" name="to" value="" />
+
+            <h4>4) Enter a few keywords to describe the classified.</h4>
+            <input type="text" class="adjust-width">
+
+            <h4>5) Click one of the options below:</h4>
+            <button class="button" type="submit" formtarget="_blank">
+                <img src="Search.gif" alt="Search">
+            </button>
+            <button class="button" type="submit" formaction="https://chat.openai.com/" formtarget="_blank">
+                <img src="Help.gif" alt="Help">
+            </button>
+            <button class="button" type="reset" formtarget="_blank">
+                <img src="Cancel.gif" alt="Reset">
+            </button>
+            </form>
+    </main>
+
+</body>
+
+</html>
