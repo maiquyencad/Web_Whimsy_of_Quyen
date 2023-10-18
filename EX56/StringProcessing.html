@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Processing</title>
+    <style>
+        body {
+            margin: 0 auto;
+            max-width: 80%;
+        }
+
+        input {
+            width: 300px;
+        }
+
+        label {
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        function enterData() {
+            var inputText = document.getElementById("input").value;
+            var result = document.getElementById("result");
+            result.innerHTML = inputText;
+        }
+
+        function uppercaseDisplay() {
+            var inputText = document.getElementById("input").value;
+            var result = document.getElementById("result");
+            result.innerHTML = inputText.toUpperCase();
+        }
+
+        function lowercaseDisplay() {
+            var inputText = document.getElementById("input").value;
+            var result = document.getElementById("result");
+            result.innerHTML = inputText.toLowerCase();
+        }
+
+        function countLowercase() {
+            var inputText = document.getElementById("input").value;
+            var lowercaseCount = 0;
+
+            for (var i = 0; i < inputText.length; i++) {
+                if (inputText[i] >= 'a' && inputText[i] <= 'z') {
+                    lowercaseCount++;
+                }
+            }
+
+            var result = document.getElementById("result");
+            result.innerHTML = "Number of Lowercase Characters: " + lowercaseCount;
+        }
+
+        function countUppercase() {
+            var inputText = document.getElementById("input").value;
+            var uppercaseCount = 0;
+
+            for (var i = 0; i < inputText.length; i++) {
+                if (inputText[i] >= 'A' && inputText[i] <= 'Z') {
+                    uppercaseCount++;
+                }
+            }
+
+            var result = document.getElementById("result");
+            result.innerHTML = "Number of Uppercase Characters: " + uppercaseCount;
+        }
+
+        function outputOneWordPerLine() {
+            var inputText = document.getElementById("input").value;
+            var words = inputText.split(/\s+/);
+            var result = document.getElementById("result");
+            result.innerHTML = words.join("\n");
+        }
+
+        function wordCount() {
+            var inputText = document.getElementById("input").value;
+            var words = inputText.split(/\s+/).filter(function (word) {
+                return word.trim() !== "";
+            });
+            var result = document.getElementById("result");
+            result.innerHTML = "Word Count: " + words.length;
+        }
+
+        function printVowelsConsonants() {
+            var inputText = document.getElementById("input").value;
+            var vowels = inputText.match(/[aeiou]/gi) || [];
+            var consonants = inputText.match(/[^aeiou\s]/gi) || [];
+            var result = document.getElementById("result");
+            result.innerHTML = "Vowels: " + vowels.join(", ") + "\nConsonants: " + consonants.join(", ");
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <table width="600" cellpadding="5">
+            <tr>
+                <td colspan="2">
+                    <label>String Processing</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>
+                            <label for="input">Input Data:</label>
+                        </legend>
+                        <textarea rows="5" cols="30" id="input" name="input"></textarea>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset>
+                        <legend>
+                            <label for="result">Result:</label>
+                        </legend>
+                        <textarea rows="5" cols="30" id="result" name="result"></textarea>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="enter" name="enter" value="Enter Data" onclick="enterData()">
+                </td>
+                <td>
+                    <input type="button" id="upper_dis" name="upper_dis" value="Uppercase Display"
+                        onclick="uppercaseDisplay()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="lower_dis" name="lower_dis" value="Lowercase Display"
+                        onclick="lowercaseDisplay()">
+                </td>
+                <td>
+                    <input type="button" id="count_lower" name="count_lower"
+                        value="Count the number of lowercase characters" onclick="countLowercase()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="count_upper" name="count_upper"
+                        value="Count the number of uppercase characters" onclick="countUppercase()">
+                </td>
+                <td>
+                    <input type="button" id="word_per_line" name="word_per_line" value="Output one word per line"
+                        onclick="outputOneWordPerLine()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="word_count" name="word_count" value="Word count" onclick="wordCount()">
+                </td>
+                <td>
+                    <input type="button" id="vowels_consonants" name="vowels_consonants"
+                        value="Print vowels, consonants" onclick="printVowelsConsonants()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" id="open_w3c" name="open_w3c" value="W3C's String Processing Website">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
