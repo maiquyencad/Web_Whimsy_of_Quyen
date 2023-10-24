@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th id="idHeader">Student ID</th>
+                <th id="nameHeader">Student Name</th>
+                <th id="birthdayHeader">Birthday</th>
+                <th id="genderHeader">Gender</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div id="studentDetail" style="display: none;">
+        <h2>Student Information</h2>
+        <table>
+            <tr>
+                <th>Student ID</th>
+                <td id="detailId"></td>
+            </tr>
+            <tr>
+                <th>Student Name</th>
+                <td id="detailName"></td>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td id="detailBirthday"></td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td id="detailGender"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const xmlString = `<students>
+            <student>
+                <id>987456</id>
+                <name>Marie Curie</name>
+                <birthday>7/11/1867</birthday>
+                <gender>Woman</gender>
+            </student>
+            <student>
+                <id>987561</id>
+                <name>Einstein</name>
+                <birthday>14/3/1879</birthday>
+                <gender>Man</gender>
+            </student>
+            <student>
+                <id>985467</id>
+                <name>Leó Szilárd</name>
+                <birthday>11/2/1898</birthday>
+                <gender>Man</gender>
+            </student>
+        </students>`;
+
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+        const students = xmlDoc.getElementsByTagName('student');
+        const tableBody = document.querySelector('#studentTable tbody');
+
+        // Create table rows and append them to the table body
+        for (const student of students) {
+            const id = student.querySelector('id').textContent;
+            const name = student.querySelector('name').textContent;
+            const birthday = student.querySelector('birthday').textContent;
+            const gender = student.querySelector('gender').textContent;
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${id}</td>
+                <td>${name}</td>
+                <td>${birthday}</td>
+                <td>${gender}</td>
+            `;
+            row.addEventListener('mouseover', () => {
+                row.classList.add('highlight');
+            });
+            row.addEventListener('mouseout', () => {
+                row.classList.remove('highlight');
+            });
+            row.addEventListener('click', () => {
+                // Populate the detail page with the selected student's information
+                document.querySelector('#detailId').textContent = id;
+                document.querySelector('#detailName').textContent = name;
+                document.querySelector('#detailBirthday').textContent = birthday;
+                document.querySelector('#detailGender').textContent = gender;
+
+                // Show the detail page
+                document.querySelector('#studentDetail').style.display = 'block';
+            });
+
+            tableBody.appendChild(row);
+        }
+
+        // Add event listeners for sorting
+        const headers = document.querySelectorAll('th');
+        headers.forEach(header => {
+            header.addEventListener('click', () => {
+                const column = header.id.toLowerCase().replace('header', '');
+                sortTable(column);
+            });
+        });
+
+        // Function to sort the table by a given column
+        function sortTable(column) {
+            const rows = Array.from(tableBody.rows);
+            rows.sort((a, b) => {
+                const valueA = a.cells[column].textContent;
+                const valueB = b.cells[column].textContent;
+                return valueA.localeCompare(valueB);
+            });
+
+            // Clear the table and re-append the sorted rows
+            while (tableBody.firstChild) {
+                tableBody.removeChild(tableBody.firstChild);
+            }
+
+            rows.forEach(row => {
+                tableBody.appendChild(row);
+            });
+        }
+    </script>
+</body>
+
+</html>
